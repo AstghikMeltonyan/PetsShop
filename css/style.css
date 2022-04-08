@@ -1,0 +1,568 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,700;1,100;1,200;1,300;1,400&display=swap');
+
+:root {
+    --yellow: #fcdd26;
+    --white: #fff;
+    --gray: #333;
+    --light-gray: #666;
+}
+
+* {
+    font-family: 'Poppins', sans-serif;
+    padding: 0;
+    margin: 0;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+    scroll-behavior: smooth;
+}
+
+*::selection {
+    background: var(--gray);
+    color: var(--yellow);
+}
+
+html::-webkit-scrollbar {
+    width: 1.3rem;
+}
+
+html::-webkit-scrollbar-track {
+    background: var(--gray);
+}
+
+html::-webkit-scrollbar-thumb {
+    background: var(--yellow);
+    border-radius: .5rem;
+}
+
+section {
+    padding: 1rem 5%;
+}
+
+.btn {
+    display: inline-block;
+    font-size: 1rem;
+    background: var(--yellow);
+    color: var(--gray);
+    padding: .5rem 2rem;
+    border-radius: .5rem;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: var(--gray);
+    color: var(--yellow);
+}
+
+.heading {
+    text-align: center;
+    padding: 1rem;
+    color: var(--gray);
+    text-shadow: 0 .3rem .5rem rgba(0, 0, 0, .1);
+    font-size: 2.5rem;
+}
+
+.heading i {
+    color: var(--yellow);
+    padding: 0 .5rem;
+}
+
+/*=============== HEADER ===============*/
+
+header {
+    background: var(--white);
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+header #menu {
+    display: none;
+    font-size: 2.5rem;
+    color: var(--gray);
+    cursor: pointer;
+}
+
+header #menu:hover {
+    color: var(--yellow);
+}
+
+header .logo {
+    font-size: 2rem;
+    color: var(--gray);
+}
+
+header .logo i {
+    color: var(--yellow);
+    transform: rotate(-65deg);
+}
+
+header .navbar a {
+    font-size: 1.3rem;
+    color: var(--gray);
+    padding-left: 1rem;
+}
+
+header .navbar a:hover {
+    color: var(--yellow);
+}
+
+header .icons i {
+    font-size: 1.5rem;
+    color: var(--gray);
+    cursor: pointer;
+    padding-left: .5rem;
+}
+
+header .icons i:hover {
+    color: var(--yellow);
+}
+
+header form {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+    transform: scaleY(0);
+    transform-origin: top;
+    opacity: 0;
+    background: var(--white);
+}
+
+header form.active {
+    transform: scaleY(1);
+    opacity: 1;
+}
+
+header form input {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.5rem;
+    text-transform: none;
+    color: var(--gray);
+}
+
+header form input::placeholder {
+    text-transform: capitalize;
+}
+
+header form label {
+    font-size: 2rem;
+    color: var(--gray);
+    padding: 1rem;
+    cursor: pointer;
+}
+
+/*=============== HOME ===============*/
+
+.home {
+    margin-top: 7rem;
+    min-height: 75vh;
+    background: url(../images/home-bg.webp);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+}
+
+.home .content span {
+    font-size: 2rem;
+    color: var(--gray);
+}
+
+.home .content h3 {
+    font-size: 4rem;
+    color: var(--gray);
+}
+
+.home .content .btn {
+    background: var(--white);
+}
+
+/*=============== CATEGORY ===============*/
+
+.category .inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.category .inner .box {
+    width: 24%;
+    text-align: center;
+}
+
+.category .inner .box img {
+    width: 100%;
+}
+
+.category .inner .box h3 {
+    font-size: 1.4rem;
+    color: var(--gray);
+}
+
+/*=============== FEATURED ===============*/
+
+.featured .inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: .5rem;
+}
+
+.featured .inner .box {
+    width: 49%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: .1rem solid rgba(0, 0, 0, .1);
+    padding: 1rem;
+    position: relative;
+}
+
+.featured .inner .box .price {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 6rem;
+    height: 6rem;
+    background: var(--yellow);
+    border-radius: 50%;
+    text-align: center;
+    line-height: 6rem;
+}
+
+.featured .inner .box img {
+    width: 20rem;
+}
+
+.featured .inner .box .content .stars i {
+    color: var(--yellow);
+    font-size: 1.5rem;
+}
+
+.featured .inner .box .content h3 {
+    font-size: 2rem;
+    color: var(--gray);
+}
+
+.featured .inner .box .content p {
+    font-size: 1.5rem;
+    color: var(--light-gray);
+}
+
+/*=============== DEAL ===============*/
+
+.deal {
+    min-height: 75vh;
+    background: url(../images/deal-bg.webp) no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /*karox enq naev----flex-flow: column;----*/
+}
+
+.deal span {
+    color: var(--gray);
+    font-size: 2rem;
+}
+
+.deal h3 {
+    color: var(--white);
+    font-size: 4rem;
+}
+
+/*=============== PRODUCTS ===============*/
+
+.products .inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: .3rem;
+}
+
+.products .inner .box {
+    width: 24%;
+    border: .1rem solid rgba(0, 0, 0, .1);
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
+    border-radius: .5rem;
+    padding: .5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.products .inner .box img {
+    width: 10rem;
+}
+
+.products .inner .box .content .stars i {
+    font-size: 1.2rem;
+    color: var(--yellow);
+}
+
+.products .inner .box .content h3 {
+    font-size: 1.3rem;
+    color: var(--gray);
+}
+
+.products .inner .box .content .price {
+    font-size: 1.3rem;
+    color: var(--light-gray);
+}
+
+.products .inner .box .content .btn {
+    padding: .2rem .6rem;
+}
+
+/*=============== OFFER ===============*/
+
+.offer .inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.offer .inner .box {
+    width: 49%;
+    position: relative;
+}
+
+.offer .inner .box img {
+    width: 100%;
+}
+
+.offer .inner .box .content {
+    position: absolute;
+    top: 40%;
+    left: 10%;
+}
+
+.offer .inner .box .content span {
+    font-size: 1.5rem;
+}
+
+.offer .inner .box .content h3 {
+    font-size: 2.5rem;
+}
+
+.offer .inner .box .content .btn {
+    background: var(--white);
+}
+
+/*=============== CONTACT ===============*/
+
+.contact {
+    background: url(../images/contact-bg.webp) no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.contact .heading i {
+    color: var(--white);
+}
+
+.contact form {
+    text-align: center;
+    padding: 2rem 10%;
+    /*forme poqracrinq vor nkari
+    chdzgvi shat andur*/
+}
+
+.contact form .inputBox {
+    display: flex;
+    justify-content: space-between;
+}
+
+.contact form .inputBox input {
+    width: 49%;
+    margin: .5rem 0;
+    font-size: 1.3rem;
+    border-radius: .5rem;
+    padding: .5rem 1rem;
+    text-transform: none;
+    color: var(--gray);
+}
+
+.contact form .inputBox input::placeholder {
+    text-transform: capitalize;
+}
+
+.contact form textarea {
+    width: 100%;
+    resize: none;
+    border-radius: .5rem;
+    padding: .5rem 1rem;
+    color: var(--gray);
+    font-size: 1rem;
+}
+
+.contact form textarea::placeholder {
+    text-transform: capitalize;
+}
+
+.contact form .btn {
+    background: var(--white);
+}
+
+/*=============== FOOTER ===============*/
+
+.footer {
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.footer .social .btn {
+    padding: .5rem .8rem;
+    border-radius: 50%;
+}
+
+.footer .author span {
+    color: var(--yellow);
+}
+
+/*=================== MEDIA =================*/
+
+@media (max-width: 1300px) {
+    html {
+        font-size: 80%;
+    }
+
+    section {
+        padding: 1rem 1%;
+    }
+
+    .products .inner .box {
+        padding: 0;
+    }
+}
+
+@media (max-width: 1000px) {
+    .featured .inner .box {
+        flex-direction: column;
+    }
+
+    .products .inner .box {
+        flex-direction: column;
+        padding: .5rem;
+    }
+
+    .products .inner .box .content .btn {
+        padding: .5rem 1rem;
+    }
+}
+
+@media (max-width: 770px) {
+    /* header .navbar{
+        display: none;
+    }*/
+
+    header #menu {
+        display: initial;
+    }
+
+    header .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--gray);
+        border-top: .1rem solid rgba(0, 0, 0, .1);
+        padding: 1rem 2rem;
+        transform: scaleY(0);
+        transform-origin: top;
+    }
+
+
+
+    header .navbar.active {
+        transform: scaleY(1);
+    }
+
+    header .navbar a {
+        display: block;
+        color: var(--white);
+        background: var(--light-gray);
+        margin: .5rem 0;
+        padding: 1rem;
+        border-radius: .5rem;
+    }
+
+    .category .inner .box {
+        width: 49%;
+    }
+
+    .products .inner .box {
+        width: 49%;
+    }
+
+    .products .inner .box img {
+        width: 50%;
+    }
+
+    .offer .inner .box {
+        width: 49%;
+    }
+}
+
+@media (max-width: 600px) {
+    .category .inner .box {
+        width: 98%;
+    }
+
+    .category .inner .box h3 {
+        font-size: 2rem;
+    }
+
+    .category .inner .box .btn {
+        font-size: 1.5rem;
+    }
+
+    .featured .inner .box {
+        width: 98%;
+    }
+
+    .products .inner .box {
+        width: 98%;
+        flex-direction: row;
+    }
+
+    .products .inner .box img {
+        width: 50%;
+    }
+
+    .offer .inner .box {
+        width: 98%;
+    }
+
+    .contact form .inputBox {
+        flex-wrap: wrap;
+    }
+
+    .contact form .inputBox input {
+        width: 100%;
+    }
+}
